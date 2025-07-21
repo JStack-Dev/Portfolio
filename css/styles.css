@@ -530,6 +530,7 @@ img[alt="anillo"] {
 
 /* === HERO (mínimo 768px) === */
 /* === HERO (mínimo 768px) === */
+@media (min-width: 768px) {
 .hero {
   position: relative; 
   display: flex;
@@ -537,6 +538,7 @@ img[alt="anillo"] {
   align-items: center;
   padding: 2rem;
   gap: 2rem; /* Espacio entre texto e imagen */
+  
 }
 
 .hero__content {
@@ -545,6 +547,7 @@ img[alt="anillo"] {
   text-align: left;
   margin-top: -500px; /* Controla cuánto sube la caja */
    z-index: 5; 
+position: relative; /* Necesario para que funcione z-index */
 }
 
 
@@ -609,25 +612,528 @@ img[alt="anillo"] {
 
 /* Ajustes de título y botón */
 .hero__title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
   font-size: 72px;
-    z-index: 10; 
-  
-   
+  line-height: 72px;
+  letter-spacing: -2.05px;
+  margin-bottom: 1rem;
+  z-index: 10;
 }
 
+.hero__title .break {
+  display: block; /* Hace que empiece en nueva línea */
+}
+
+
 .hero__subtitle {
-  font-size: 1rem;
+  font-size: 18px;
   line-height: 1.5;
   margin-bottom: 1.5rem;
+  position: relative;  /* Necesario para que 'top' funcione */
+  top: 60px;          /* Ajusta el desplazamiento vertical */
 }
+
 
 .contact {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  border-bottom: 2px solid #00ff7f; /* Subrayado estilo botón */
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
+  position: relative; /* Necesario para mover el pseudo-elemento */
+  top: 60px;          /* Ajusta el botón verticalmente */
+  left: -20px;     /* Mueve el botón 40px a la izquierda */
 }
+
+/* Subrayado personalizado con ::after */
+.contact::after {
+  content: "";
+  position: absolute;
+  left: 78px;
+  bottom: -25px;        /* Ajusta la distancia hacia abajo */
+  width: 74%;
+  height: 2px;
+  background-color: #00ff7f; /* Color del subrayado */
+}
+
+}
+
+
+
+
+/* === TECNOLOGÍAS (mínimo 768px) === */
+/* === TECNOLOGÍAS (mínimo 768px) === */
+@media (min-width: 768px) {
+.tecnologias .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
+  gap: 30px;                             /* Espacio entre cajas */
+  justify-items: start;                  /* Alineación izquierda */
+  max-width: 900px;                      /* Opcional: ancho máximo */
+  margin: 0 auto;                        /* Centrar el contenedor */
+  padding: 2rem 1rem;
+}
+
+.tecnologia {
+  text-align: left;
+}
+
+.tecnologia h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.tecnologia p {
+  font-size: 18px;
+  color: #ccc;
+}
+
+
+
+.anillo2 {
+  position: absolute;  
+  right: -700px;            /* Pegada al borde derecho */
+  top: -90px;           /* Ajusta la altura (mueve hacia arriba/abajo) */
+  width: 200px;        /* Ajusta tamaño */
+  height: auto;
+  z-index: 1;          /* Por encima de elementos de fondo */
+}
+
+.divider.divider-bottom {
+  display: none !important;
+}
+ 
+
+/* Tarjetas individuales */
+/* Tarjetas individuales */
+/* Tarjetas individuales */
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  gap: 30px; /* Espacio entre tarjetas */
+  justify-items: center; /* Alineadas a la izquierda */
+  margin-top: 2rem;
+  padding: 0 10px;
+}
+
+
+.projects__header {
+  display: flex;
+  justify-content: space-between; /* Título a la izq, botón a la der */
+  align-items: center;            /* Alineación vertical centrada */
+  margin-bottom: 2rem;            /* Espacio inferior */
+  padding: 0 1rem;                /* Espaciado horizontal */
+}
+
+/* Estilos para el título */
+.projects__header h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+/* Estilos para el botón "Contact Me" */
+.projects__header .btn-contact {
+  padding: 0.8rem 1.5rem;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  left: 25px; /* Ajusta la posición horizontal */
+  
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.projects__header .btn-contact:hover {
+  transform: scale(1.05);
+  background-color: #00cc66;
+}
+
+
+
+.project-card {
+  padding: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.project-card__img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.project-card__title {
+  font-size: 80px;       /* Ajusta el tamaño cambiando este valor */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;      /* Para que escale bien */
+}
+
+
+.project-card__description {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.project-card__buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Botones  */
+.btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+ 
+  color: #00ff7f;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  background: #00ff7f;
+  color: #000;
+}
+
+
+img[alt="anillo"] {
+  position: relative;
+  left: -10px; /* Mueve la imagen hacia la derecha */
+  top: -100px;      /* Mueve la imagen hacia arriba */
+  width: 210px;    /* Ancho de la imagen (ajústalo) */
+  height: auto;    /* Mantiene la proporción */
+  padding: 20px;   /* Hace que la caja alrededor sea más grande */
+  display: inline-block; /* Para que el padding funcione como caja */
+}
+
+
+
+
+footer .divider.divider-top {
+  width: 88%;
+  height: 2px;
+  background-color: #fff;
+  margin: 0;
+  margin-left: 40px;
+  position: relative;
+  top: -100px;
+}
+
+
+
+
+
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between; /* Ajusta posición horizontal */
+  align-items: center;            /* Centra verticalmente */
+  padding: 1rem 2rem;
+  gap: 2rem;                      /* Espacio entre bloques */
+  margin-top: -80px; /* Ajusta este valor para subir el bloque */
+}
+
+/* Bloque del nombre */
+.footer__bottom .footer__bottom .nombre {
+  flex: 1;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  text-align: left;
+
+  position: relative;  /* Habilita el movimiento */
+  top: -10px;           /* Mueve hacia abajo (puedes usar negativo para subir) */
+  left: -25px;          /* Mueve hacia la derecha */
+}
+
+
+/* Bloque de las redes sociales */
+.footer__bottom .imagenes_redes {
+  display: flex;
+  justify-content: flex-end;  /* Iconos alineados a la derecha */
+  gap: 0rem;                  /* Espacio entre iconos */
+  flex: 1;
+  position: relative;
+  top: -10px;
+  left: -30px;
+}
+
+.footer__bottom .imagenes_redes img {
+  width: 30px;                /* Tamaño de iconos */
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.footer__bottom .imagenes_redes img {
+  margin-right: 2rem;
+}
+
+.footer__bottom .imagenes_redes img:last-child {
+  margin-right: 0;
+}
+
+
+.footer__bottom .imagenes_redes img:hover {
+  transform: scale(1.2);          /* Zoom en hover */
+}
+
+
+}
+
+
+
+
+/* === Desktop (mínimo 1024px) === */
+/* === Desktop (mínimo 1024px) === */
+/* === Desktop (mínimo 1024px) === */
+/* === Desktop (mínimo 1024px) === */
+@media (min-width: 1024px) {
+
+
+
+
+.hero {
+  position: relative; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem; /* Espacio entre texto e imagen */
+  
+}
+
+.hero__content {
+  width: 445px;       /* Ancho exacto (ajústalo) */
+  height: 449px;      /* Alto exacto (ajústalo) */
+  text-align: left;
+  margin-top: -500px; /* Controla cuánto sube la caja */
+   z-index: 5; 
+position: relative; /* Necesario para que funcione z-index */
+}
+
+
+
+
+/* Imagen y background a la derecha */
+.hero__img {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: flex-end; /* Imagen hacia la derecha */
+  align-items: center;
+   width: 322px;    /* Ajusta el ancho de la caja */
+  height: 486px;   /* Ajusta el alto de la caja */
+    left: 415px;
+    
+}
+
+.hero__foto {
+  left: 400px;
+  right: 0;
+  width: 322px;   /* ancho exacto */
+  height: 486px;  /* alto exacto */
+
+  z-index: 3;  /* Delante del background */
+}
+
+.hero__background {
+  position: absolute;
+  left: 445px;
+  top:-105px;
+  right: 0;
+  width: 322px;   /* ancho exacto */
+  height: 600px;  /* alto exacto */
+  background-color: #242424; /* Fondo claro (ajusta el color) */
+  z-index: 1;        /* Detrás de la foto */
+}
+
+.hero__anillo {
+  position: absolute;
+  left: -450px;        /* Pegado al borde izquierdo */
+  top: 40px;       /* Centrado verticalmente */
+  transform: translateY(-50%); /* Ajusta el centrado vertical */
+  width: 250px;   /* Ajusta tamaño */
+  height: auto;
+  z-index: 1;     /* Controla su nivel en la pila */
+  pointer-events: none; /* No interfiere con clicks */
+}
+
+.hero__circulo {
+  position: absolute;
+  right: 0;        /* Pegado al borde derecho */
+  top: 385px;        /* Ajusta su altura */
+  transform: translateY(-30%);
+  width: 70px;    /* Ajusta tamaño */
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+}
+
+
+
+/* Ajustes de título y botón */
+.hero__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 72px;
+  letter-spacing: -2.05px;
+  margin-bottom: 1rem;
+  z-index: 10;
+}
+
+.hero__title .break {
+  display: block; /* Hace que empiece en nueva línea */
+}
+
+
+.hero__subtitle {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  position: relative;  /* Necesario para que 'top' funcione */
+  top: 60px;          /* Ajusta el desplazamiento vertical */
+}
+
+
+.contact {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative; /* Necesario para mover el pseudo-elemento */
+  top: 60px;          /* Ajusta el botón verticalmente */
+  left: -20px;     /* Mueve el botón 40px a la izquierda */
+}
+
+/* Subrayado personalizado con ::after */
+.contact::after {
+  content: "";
+  position: absolute;
+  left: 78px;
+  bottom: -25px;        /* Ajusta la distancia hacia abajo */
+  width: 74%;
+  height: 2px;
+  background-color: #00ff7f; /* Color del subrayado */
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }
