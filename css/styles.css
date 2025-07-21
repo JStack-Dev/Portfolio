@@ -1,0 +1,633 @@
+html, body {
+  background-color: #151515; 
+  color: #fff; /* Texto blanco para que sea legible */
+  font-family: "Space Grotesk"; 
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden !important; /* Evita el scroll horizontal */
+}
+
+
+
+/* ====== Header ====== */
+.header-principal {
+  text-align: center;        /* Centra todo el contenido */
+  padding: 1.5rem 1rem;      /* Espaciado interno */
+      /* Fondo negro (cambia si tu diseño es distinto) */
+  color: #fff;               /* Texto blanco */
+   position: relative; /* Necesario para que z-index funcione */
+  z-index: 10;        /* Encima del hero */
+}
+
+.header-principal .nombre {
+  font-size: 24px;           /* Tamaño del texto del nombre */
+  font-weight: bold;         /* Negrita */
+  margin-bottom: 1rem;       /* Espacio entre el nombre y las redes */
+  
+}
+
+/* ====== Redes sociales ====== */
+.imagenes_redes {
+  display: flex;
+  justify-content: center;   /* Centra horizontalmente */
+  gap: 1rem;                 /* Espaciado entre iconos */
+}
+
+.imagenes_redes img {
+  width: 28px;               /* Tamaño base de los iconos */
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.imagenes_redes img:hover {
+  transform: scale(1.2);     /* Efecto de hover */
+}
+
+
+
+
+/* ====== HERO ====== */
+.hero {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: 0;
+}
+
+/* Fondo claro independiente */
+.hero__background {
+  background-color: #242424; /* Gris oscuro */
+  width: 175px ;
+  height: 495px;          /* Altura ajustable */
+  position: absolute;     /* Lo colocamos atrás */
+  top: -250px;             /* Que suba por detrás del header */
+  left: 100px;
+  z-index: 0;
+}
+
+/* Contenedor de imagen */
+.hero__img {
+  position: relative;
+  z-index: 1;             /* Foto por encima del fondo */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* Imagen principal */
+.hero__foto {
+  width: 174px;
+  height: 242px;
+  object-fit: cover;
+  z-index: 2;
+  
+}
+
+/* Elementos decorativos */
+.hero__anillo {
+  position: absolute;
+  left: 0;  /* pegado a la izquierda */
+  top: 20%; /* centrado verticalmente respecto al hero */
+  transform: translateY(-50%);
+  width: 160px;
+  z-index: 1;
+}
+
+.hero__circulo {
+  position: absolute;
+  right: 0; /* pegado a la derecha */
+  top: 75%; /* centrado verticalmente respecto al hero */
+  transform: translateY(-50%);
+  width: 50px;
+}
+
+/* Contenido */
+.hero__content {
+  text-align: center;
+  margin-top: 0; /* Texto pegado después de la foto */
+}
+
+.hero__title {
+  font-size: 40px;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero__title .highlight {
+  border-bottom: 3px solid #4EE1A0; /* Subrayado (puedes cambiar el color) */
+  padding-bottom: 2px;              /* Espacio entre texto y línea */
+}
+
+.hero__subtitle {
+  font-size: 16px;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Botón */
+.contact {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  height: 0px; /* Ajusta aquí el grosor */
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+  
+}
+
+.contact::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;        /* Ajusta para colocar la línea más arriba/abajo */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;         /* Más corto que el texto */
+  height: 0.5px;
+  background-color: #00ff7f;
+}
+.contact:hover {
+  background: #00ff7f;
+  color: #000;
+}
+
+
+
+/* ====== Tecnologías ====== */
+
+
+.tecnologias {
+  text-align: center;     /* Centra todo el texto */
+  padding: 2rem 1rem;     /* Espaciado interno */
+  position: relative;
+  color: #fff;            /* Texto blanco */
+}
+
+.tecnologias .container {
+  display: grid;
+  grid-template-columns: 1fr; /* Por defecto 1 columna (Mobile First) */
+  gap: 2rem;                  /* Espacio entre tecnologías */
+  justify-items: center;      /* Centra cada item en la columna */
+}
+
+.tecnologia h1,
+.tecnologia p {
+  margin: 0;
+  padding: 0;
+}
+
+.tecnologia {
+  text-align: center;
+}
+
+.tecnologia h1 {
+  font-size: 32px;
+  margin-bottom: 0.1rem;
+}
+
+.tecnologia p {
+  font-size: 16px;
+  color:  #D9D9D9;
+
+}
+
+.anillo2 {
+  position: absolute;  
+  right: -200px;            /* Pegada al borde derecho */
+  top: -50px;           /* Ajusta la altura (mueve hacia arriba/abajo) */
+  width: 200px;        /* Ajusta tamaño */
+  height: auto;
+  z-index: 1;          /* Por encima de elementos de fondo */
+}
+
+.divider-top {
+  width: 90%;               /* Ancho de la línea */
+  height: 2px;              /* Grosor de la línea */
+  background-color: #ffffff;   /* Color de la línea */
+   margin: 4rem auto 0.2rem auto;       /* Espacio arriba/abajo y centrada */
+  border-radius: 0px;       /* Opcional: esquinas redondeadas */
+}
+
+.divider-bottom {
+  width: 90%;               /* Ancho de la línea */
+  height: 2px;              /* Grosor de la línea */
+  background-color: #ffffff;   /* Color de la línea */
+   margin: -1rem auto 0.2rem auto;       /* Espacio arriba/abajo y centrada */
+  border-radius: 0px;       /* Opcional: esquinas redondeadas */
+}
+
+
+
+
+
+
+/* ====== Projects ====== */
+
+.projects {
+  padding: 2rem 1rem;
+  margin-left: 0rem;
+  color: #fff;
+  
+}
+
+.projects__header {
+  display: flex;                 /* Alinea h2 y botón en una fila */
+  justify-content: space-between;/* h2 a la izquierda, botón a la derecha */
+  align-items: center;           /* Centra verticalmente los elementos */
+  margin-bottom: 2rem;
+}
+
+.projects__header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.projects__header .btn-contact {
+  position: relative;          /* Necesario para que funcione ::after */
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+   font-size: 12px; 
+}
+
+.projects__header .btn-contact::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;                 /* Ajusta para la posición de la línea */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;                  /* Mismo ancho que el del hero */
+  height: 1px;
+  background-color: #00ff7f;   /* Color subrayado */
+  transition: width 0.3s ease;
+}
+
+.projects__header .btn-contact:hover::after {
+  width: 100%;                 /* Animación al hover */
+}
+
+
+.projects__grid {
+  display: flex;
+  flex-direction: column; /* Articles uno debajo del otro */
+  gap: 2rem;              /* Espacio entre artículos */
+  align-items: center; 
+  margin-top: -40px;
+}
+
+.project-card {
+       /* Fondo del card */
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+   width: 100%; 
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 0px;
+}
+
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: left; /* Opcional: por si el contenedor tuviera otro align */
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #ccc;
+  text-align: left;
+  word-spacing: 1rem; /* Espacio extra entre palabras */
+}
+
+
+.project-card__buttons {
+  display: flex;
+  justify-content: flex-start; /* Los botones dentro van a la izquierda */
+  gap: 1rem;                   /* Espacio entre botones */
+  margin-left: -15px;              /* Sin margen extra */
+  padding-left: 0;             /* Quitar padding extra */
+  width: 100%;                 /* Ocupar todo el ancho disponible */
+}
+
+.project-card__buttons .btn {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+/* Subrayado */
+.project-card__buttons .btn::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;            /* Distancia de la línea al texto */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;             /* Longitud de la línea */
+  height: 1.5px;          /* Grosor del subrayado */
+  background-color: #00ff7f; /* Color */
+  transition: width 0.3s ease;
+}
+
+/* Animación al pasar el ratón */
+.project-card__buttons .btn:hover::after {
+  width: 100%;
+}
+
+.project-card h3,
+.project-card p,
+.project-card__buttons {
+  margin-top: -8px; /* Ajusta el valor para subirlos */
+}
+
+
+
+
+
+
+
+/* ====== Footer General ====== */
+/* ====== Footer General ====== */
+/* ====== Footer General ====== */
+
+.footer {
+  background-color: #242424; 
+  color: #fff;
+   width: 105%;            /* Ocupa 100% del viewport */
+  margin: 0;
+  padding: 2rem 0;
+  margin-left: -10px;  /* Mueve 20px a la derecha */
+  margin-top: 10px;   /* Mueve 10px hacia abajo */
+}
+
+.footer-container {
+                /* Ocupa todo el ancho disponible */
+  max-width: 375px;          /* Ajuste especial para mobile */
+  margin: 0 auto;            /* Centra el contenido */
+  padding: 0 1rem;           /* Espaciado lateral */
+}
+
+
+/* ====== Título y texto ====== */
+.footer__title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.footer__text {
+  text-align: center;
+  max-width: 350px;    /* Para no ocupar todo el ancho */
+  margin: 0 auto 2rem; /* Centrado con auto */
+  line-height: 1.6;
+  color: #ccc;
+  font-size: 1rem;
+  font-size: 16px;
+}
+
+/* ====== Formulario ====== */
+.footer__form {
+  display: flex;
+  flex-direction: column; /* Pone los campos en columna */
+  align-items: flex-start; /* Alinea a la izquierda */
+  max-width: 350px;       /* Ancho máximo */
+  margin: 0 auto 2rem;    /* Centra el formulario horizontalmente */
+  z-index: 2;
+}
+
+.footer__input,
+.footer__textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  width: 90%; 
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.footer__input::placeholder,
+.footer__textarea::placeholder {
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer__button {
+  background: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
+  border-bottom: 2px solid #00ff7f;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  align-self: flex-end;
+}
+
+.footer__button:hover {
+  color: #00ff7f;
+  border-color: #fff;
+}
+
+/* ====== Footer Bottom ====== */
+.footer__bottom {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer__bottom .imagenes_redes {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer__bottom img {
+  width: 30px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.footer__bottom img:hover {
+  transform: scale(1.1);
+}
+
+
+img[alt="anillo"] {
+  position: relative;
+  top: -150px; /* Sube 20px */
+   z-index: 1;
+}
+
+.footer__bottom .nombre {
+  font-size: 24px;  /* Ajusta el tamaño, por ejemplo 24px */
+  font-weight: 600;   /* Grosor del texto */
+  text-align: center; /* Centrado (opcional) */
+}
+
+
+
+
+
+
+
+
+
+/* === TABLET (mínimo 768px) === */
+/* === TABLET (mínimo 768px) === */
+/* === TABLET (mínimo 768px) === */
+@media (min-width: 768px) {
+  .header-principal .container {
+    display: flex;                  /* Coloca nombre e iconos en una fila */
+    justify-content: space-between; /* Espacio entre nombre y redes */
+    align-items: center;            /* Centra verticalmente */
+     padding-top: 20rem 10px; 
+     margin-top: -20px; 
+     margin-left: 20px; /* Ajusta el margen izquierdo */
+     margin-right: 20px; /* Ajusta el margen derecho */
+  }
+
+  .header-principal .nombre {
+    font-size: 32px;                /* Aumenta el tamaño del nombre */
+   
+  }
+
+  .header-principal .imagenes_redes img {
+    width: 324x;                    /* Tamaño de iconos */
+    height: auto;
+    margin-left: 1rem;              /* Espacio entre iconos */
+  }
+}
+
+
+
+
+/* === HERO (mínimo 768px) === */
+/* === HERO (mínimo 768px) === */
+.hero {
+  position: relative; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem; /* Espacio entre texto e imagen */
+}
+
+.hero__content {
+  width: 445px;       /* Ancho exacto (ajústalo) */
+  height: 449px;      /* Alto exacto (ajústalo) */
+  text-align: left;
+  margin-top: -500px; /* Controla cuánto sube la caja */
+   z-index: 5; 
+}
+
+
+
+
+/* Imagen y background a la derecha */
+.hero__img {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: flex-end; /* Imagen hacia la derecha */
+  align-items: center;
+   width: 322px;    /* Ajusta el ancho de la caja */
+  height: 486px;   /* Ajusta el alto de la caja */
+    left: 415px;
+    
+}
+
+.hero__foto {
+  left: 400px;
+  right: 0;
+  width: 322px;   /* ancho exacto */
+  height: 486px;  /* alto exacto */
+
+  z-index: 3;  /* Delante del background */
+}
+
+.hero__background {
+  position: absolute;
+  left: 445px;
+  top:-105px;
+  right: 0;
+  width: 322px;   /* ancho exacto */
+  height: 600px;  /* alto exacto */
+  background-color: #242424; /* Fondo claro (ajusta el color) */
+  z-index: 1;        /* Detrás de la foto */
+}
+
+.hero__anillo {
+  position: absolute;
+  left: -450px;        /* Pegado al borde izquierdo */
+  top: 40px;       /* Centrado verticalmente */
+  transform: translateY(-50%); /* Ajusta el centrado vertical */
+  width: 250px;   /* Ajusta tamaño */
+  height: auto;
+  z-index: 1;     /* Controla su nivel en la pila */
+  pointer-events: none; /* No interfiere con clicks */
+}
+
+.hero__circulo {
+  position: absolute;
+  right: 0;        /* Pegado al borde derecho */
+  top: 385px;        /* Ajusta su altura */
+  transform: translateY(-30%);
+  width: 70px;    /* Ajusta tamaño */
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+}
+
+
+
+/* Ajustes de título y botón */
+.hero__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-size: 72px;
+    z-index: 10; 
+  
+   
+}
+
+.hero__subtitle {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.contact {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-bottom: 2px solid #00ff7f; /* Subrayado estilo botón */
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
