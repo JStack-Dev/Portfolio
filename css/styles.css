@@ -909,110 +909,120 @@ footer .divider.divider-top {
 @media (min-width: 1024px) {
 
 
+  
+/* ====== Header ====== */
+.header-principal {
+  text-align: center;        /* Centra todo el contenido */
+  padding: 1.5rem 1rem;      /* Espaciado interno */
+      /* Fondo negro (cambia si tu diseño es distinto) */
+  color: #fff;               /* Texto blanco */
+   position: relative; /* Necesario para que z-index funcione */
+  z-index: 10;        /* Encima del hero */
+}
+
+.header-principal .nombre {
+  font-size: 32px;        /* Tamaño del texto del nombre */
+  font-weight: bold;      /* Negrita */
+  margin-bottom: 1rem;    /* Espacio entre el nombre y las redes */
+  position: relative;     /* Necesario para usar left y top */
+  left: 200px;             /* Lo mueve 50px hacia la derecha */
+}
 
 
-.hero {
-  position: relative; 
+/* ====== Redes sociales ====== */
+.imagenes_redes {
   display: flex;
+  justify-content: center;  
+  gap: 1rem;
+  position: relative;         /* Necesario para usar left */
+  left: -250px;                /* Mueve 50px hacia la izquierda */
+}
+
+
+.imagenes_redes img {
+  width: 28px;               /* Tamaño base de los iconos */
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.imagenes_redes img:hover {
+  transform: scale(1.2);     /* Efecto de hover */
+}
+}
+
+/* ====== HERO ====== */  
+/* ====== HERO ====== */  
+/* ====== HERO ====== */  
+/* ====== HERO ====== */  
+@media (min-width: 1024px) {
+.hero {
+  position: relative;
+  display: flex;              /* Usamos flex para que texto e imagen estén en fila */
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  gap: 2rem; /* Espacio entre texto e imagen */
-  
+  gap: 2rem;                  /* Espacio entre texto e imagen */
 }
 
 .hero__content {
-  width: 445px;       /* Ancho exacto (ajústalo) */
-  height: 449px;      /* Alto exacto (ajústalo) */
+  max-width: 909px;           /* Ajusta el ancho máximo */
+  width: 100%;
+  flex: 1 1 auto;             /* Ocupa espacio flexible */
+  height: auto;
   text-align: left;
-  margin-top: -500px; /* Controla cuánto sube la caja */
-   z-index: 5; 
-position: relative; /* Necesario para que funcione z-index */
-}
-
-
-
-
-/* Imagen y background a la derecha */
-.hero__img {
-  flex: 1;
+  margin-top: -600px;         /* Controla cuánto sube la caja */
+  z-index: 5;
   position: relative;
-  display: flex;
-  justify-content: flex-end; /* Imagen hacia la derecha */
-  align-items: center;
-   width: 322px;    /* Ajusta el ancho de la caja */
-  height: 486px;   /* Ajusta el alto de la caja */
-    left: 415px;
-    
 }
 
-.hero__foto {
-  left: 400px;
-  right: 0;
-  width: 322px;   /* ancho exacto */
-  height: 486px;  /* alto exacto */
-
-  z-index: 3;  /* Delante del background */
-}
-
-.hero__background {
-  position: absolute;
-  left: 445px;
-  top:-105px;
-  right: 0;
-  width: 322px;   /* ancho exacto */
-  height: 600px;  /* alto exacto */
-  background-color: #242424; /* Fondo claro (ajusta el color) */
-  z-index: 1;        /* Detrás de la foto */
-}
-
-.hero__anillo {
-  position: absolute;
-  left: -450px;        /* Pegado al borde izquierdo */
-  top: 40px;       /* Centrado verticalmente */
-  transform: translateY(-50%); /* Ajusta el centrado vertical */
-  width: 250px;   /* Ajusta tamaño */
-  height: auto;
-  z-index: 1;     /* Controla su nivel en la pila */
-  pointer-events: none; /* No interfiere con clicks */
-}
-
-.hero__circulo {
-  position: absolute;
-  right: 0;        /* Pegado al borde derecho */
-  top: 385px;        /* Ajusta su altura */
-  transform: translateY(-30%);
-  width: 70px;    /* Ajusta tamaño */
-  height: auto;
-  z-index: 3;
-  pointer-events: none;
-}
-
-
-
-/* Ajustes de título y botón */
+/* ===== Ajustes de título y botón ===== */
 .hero__title {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
-  font-size: 72px;
-  line-height: 72px;
+  font-size: clamp(-50px, 50vw, 88px);
+
+  line-height: 1.1;
   letter-spacing: -2.05px;
   margin-bottom: 1rem;
   z-index: 10;
+  display: block;
+  width: 100%;
+  white-space: normal;        /* Permite saltos normales */
+  max-width: 800px;           /* Controla el ancho del texto */
+  margin-left: 150px; /* Mueve el título 50px hacia la derecha */
+  margin-top: -20px; /* Mueve el título 50px hacia abajo */
 }
 
-.hero__title .break {
-  display: block; /* Hace que empiece en nueva línea */
+/* ===== Anulación de <span class="break"> ===== */
+.hero__title span.break {
+  display: inline !important;
+  white-space: normal !important;
+  line-height: inherit !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  display: contents !important;
 }
-
 
 .hero__subtitle {
   font-size: 18px;
   line-height: 1.5;
   margin-bottom: 1.5rem;
-  position: relative;  /* Necesario para que 'top' funcione */
-  top: 60px;          /* Ajusta el desplazamiento vertical */
+
+  position: relative;   /* Permite mover la caja con top/left */
+  top: 60px;            /* Mueve la caja 60px hacia abajo */
+
+  /* Propiedades para la caja */
+
+  padding: 1rem;        /* Espaciado interno */
+  border-radius: 8px;   /* Bordes redondeados */
+  width: 80%;           /* Control del ancho de la caja */
+  max-width: 450px;     /* Límite de ancho */
+ position: relative;
+  left: -80px; /* Mueve 40px hacia la izquierda */
 }
+
 
 
 .contact {
@@ -1022,8 +1032,8 @@ position: relative; /* Necesario para que funcione z-index */
   color: #fff;
   text-transform: uppercase;
   position: relative; /* Necesario para mover el pseudo-elemento */
-  top: 60px;          /* Ajusta el botón verticalmente */
-  left: -20px;     /* Mueve el botón 40px a la izquierda */
+  top: 80px;          /* Ajusta el botón verticalmente */
+  left: 125px;     /* Mueve el botón 40px a la izquierda */
 }
 
 /* Subrayado personalizado con ::after */
@@ -1037,6 +1047,419 @@ position: relative; /* Necesario para que funcione z-index */
   background-color: #00ff7f; /* Color del subrayado */
 }
 
+
+
+/* Imagen y background a la derecha */
+.hero__img {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: flex-end; /* Imagen hacia la derecha */
+  align-items: center;
+   width: 445px;    /* Ajusta el ancho de la caja */
+  height: 618px;   /* Ajusta el alto de la caja */
+    left: 815px;
+    top: -30px;
+    
+}
+
+.hero__foto {
+  left: 845px;
+  right: 0;
+  width: 445px;   /* ancho exacto */
+  height: 618px;  /* alto exacto */
+
+  z-index: 3;  /* Delante del background */
+}
+
+.hero__background {
+  position: absolute;
+  left: 845px;
+  top:-105px;
+  right: 0;
+  width: 445px;   /* ancho exacto */
+  height: 720px;  /* alto exacto */
+  background-color: #242424; /* Fondo claro (ajusta el color) */
+  z-index: 1;        /* Detrás de la foto */
+}
+
+.hero__anillo {
+  position: absolute;
+  left: -850px;                  /* Lo pega al borde izquierdo */
+  top: 20%;                 /* Lo sitúa en el centro vertical del contenedor */
+  transform: translateY(-50%); /* Ajusta el centrado vertical */
+  width: 250px;             /* Ajusta tamaño */
+  height: auto;
+  z-index: 1;               /* Controla su nivel en la pila */
+  pointer-events: none;     /* No interfiere con clicks */
+}
+
+
+.hero__circulo {
+  position: absolute;
+  right: -350px;        /* Pegado al borde derecho */
+  top: 385px;        /* Ajusta su altura */
+  transform: translateY(-30%);
+  width: 70px;    /* Ajusta tamaño */
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+}
+
+
+.divider.divider-top {
+  position: relative; /* o absolute si su contenedor es relative */
+  top: 250px;          /* Mueve 50px hacia abajo */
+  width: 90%;
+  height: 2px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+
+
+
+/* ====== Tecnologías ====== */
+/* ====== Tecnologías ====== */   
+.tecnologias {
+  padding: 2rem 1rem;
+  color: #fff;
+  margin-top: 300px; 
+}
+
+.tecnologias .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 2rem;                             /* Espacio entre cajas */
+  max-width: 1200px;                     /* Ancho máximo de la sección */
+  margin: 0 auto;                        /* Centra la sección */
+}
+
+.tecnologia {
+  text-align: left;                      /* Alineación a la izquierda */
+}
+
+.tecnologia h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.tecnologia p {
+  font-size: 18px;
+  color: #ccc;
+  margin: 0;
+}
+
+.anillo2 {
+  position: absolute;   /* Permite moverlo libremente dentro de su contenedor (.hero) */
+  top: -120px;           /* Mueve 100px desde arriba (ajusta a tu gusto) */
+  left: 1060px;           /* Mueve 50px desde la izquierda (ajusta a tu gusto) */
+  width: 300px;         /* Aumenta el tamaño de la imagen */
+  height: auto;         /* Mantiene la proporción */
+  z-index: 2;           /* Por encima de otros elementos si es necesario */
+  transition: all 0.3s ease; /* Animación suave cuando cambies valores */
+}
+
+
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  gap: 30px; /* Espacio entre tarjetas */
+  justify-items: center; /* Alineadas a la izquierda */
+  margin-top: 2rem;
+  padding: 0 10px;
+    transform: scale(0.8); /* 0.9 = 90% del tamaño original */
+  transform-origin: center; /* Mantiene el bloque centrado al escalar */  position: relative; /* Permite moverlo sin afectar otros elementos */
+  top: -150px;          /* Desplaza el header 30px hacia abajo */
+
+}
+
+
+.projects__header {
+  display: flex;
+  justify-content: space-between; /* Título a la izq, botón a la der */
+  align-items: center;            /* Alineación vertical centrada */
+  margin-bottom: 2rem;            /* Espacio inferior */
+  padding: 0 1rem;                /* Espaciado horizontal */
+    transform: scale(0.8); /* 0.9 = 90% del tamaño original */
+  transform-origin: center; /* Mantiene el bloque centrado al escalar */
+  position: relative; /* Permite moverlo sin afectar otros elementos */
+  top: 0px;          /* Desplaza el header 30px hacia abajo */
+}
+
+/* Estilos para el título */
+.projects__header h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 88px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -1px;
+  margin: 0;
+  top: 200px;
+}
+
+/* Estilos para el botón "Contact Me" */
+.projects__header .btn-contact {
+  padding: 0.8rem 1.5rem;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  left: 25px; /* Ajusta la posición horizontal */
+  
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.projects__header .btn-contact:hover {
+  transform: scale(1.05);
+  background-color: #00cc66;
+}
+
+
+
+.project-card {
+  padding: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  color: #fff;
+}
+
+.project-card__img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.project-card__title {
+  font-size: 80px;       /* Ajusta el tamaño cambiando este valor */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;      /* Para que escale bien */
+}
+
+
+.project-card__description {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.project-card__buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Botones  */
+.btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+ 
+  color: #00ff7f;
+  transition: background 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  background: #00ff7f;
+  color: #000;
+}
+
+
+
+
+
+
+
+
+
+/* === FOOTER GENERAL === */
+.footer {
+  background-color: #242424;
+  color: #fff;
+  padding: -0.5rem 1rem;
+  position: relative; /* Contenedor de referencia */
+  margin-top: -300px; /* Mueve 50px hacia arriba */
+  overflow: hidden;    /* Para evitar scroll innecesario */
+}
+
+.footer .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas */
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+  align-items: start;
+    text-align: left; /* Alineación del texto */
+  justify-items: start; /* Alinea todos los elementos a la izquierda de su celda */
+   position: relative;
+  left: 20px;   /* Mueve a la derecha */
+  top: 20px;    /* Mueve hacia abajo */
+}
+
+/* Colocamos el título y texto en la primera columna */
+.footer__title,
+.footer__text {
+  grid-column: 1; /* Primera columna */
+}
+
+/* Colocamos el formulario en la segunda columna */
+.footer__form {
+  grid-column: 2; /* Segunda columna */
+   text-align: left;
+
+
+}
+.footer__title {
+  font-size: 88px;
+  margin-bottom: 1rem;
+    margin-left: -70px;  /* Mueve hacia la derecha */
+  margin-top: 20px;   /* Mueve hacia abajo */
+}
+
+.footer__text {
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 450px;
+  margin-left: -70px;  /* Mueve hacia la derecha */
+  margin-top: 20px;   /* Mueve hacia abajo */
+  text-align: left;   /* Alinea el texto a la izquierda */
+}
+.footer__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Menos espacio entre elementos */
+  position: relative;   /* Permite moverla sin afectar al flujo */
+  left: -100px;         /* Mueve la caja hacia la derecha */
+  top: -150px;          /* Mueve la caja hacia abajo */
+  text-align: left;     /* Alinea el texto a la izquierda */
+  width: 600px;         /* Aumenta el ancho (ajústalo a lo que necesites) */
+}
+
+
+.footer__input,
+.footer__textarea {
+  width: 100%;
+  padding: 1rem;
+position: relative;   /* Necesario para usar ::after */
+  font-size: 1.2rem;
+  
+}
+.footer__input::after,
+.footer__textarea::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 300%;          /* Aquí defines la longitud del borde (120% = más largo) */
+  height: 2px;          /* Grosor de la línea */
+  background-color: currentColor; /* Usa el color actual del texto */
+}
+.footer__button {
+  padding: 0.8rem 1rem;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+   position: relative;   /* Permite moverla sin afectar al flujo */
+  left: 150px;            /* Mueve la caja hacia la derecha */
+  top: 0px;            /* Mueve la caja hacia abajo */
+  text-align: right;      /* Alinea el texto a la izquierda */
+  border: none; 
+  font-size: 15px;  
+}
+.footer__button::after {
+  content: "";
+  display: block;
+  width: 120px;        /* Cambia este valor para ajustar el tamaño de la línea */
+  height: 2px;        /* Grosor de la línea */
+  background-color:#4EE1A0; /* Color de la línea */
+  margin: 0 auto;     /* Centra la línea debajo del texto */
+  margin-top: 15px;    /* Espacio entre texto y línea */
+
+}
+
+.footer__button:hover {
+  background-color: #ddd;
+}
+
+
+
+footer .divider.divider-top {
+  position: absolute;    /* No afecta al flujo del documento */
+  width: 1200px;         /* Longitud de la línea */
+  height: 2px;           /* Grosor */
+  background-color: #fff;
+  top: 600px;             /* Mueve verticalmente */
+  left: -120px;            /* Mueve horizontalmente */
+}
+
+
+.footer__bottom {
+  width: 1225px;
+  max-width: 1600px;      /* Caja bastante ancha */
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  
+  
+  display: flex;
+  justify-content: space-between; /* H1 a la izquierda, redes a la derecha */
+  align-items: center;
+  position: absolute; /* O relative si depende del contenedor */
+  left: -110px;        /* Mueve 50px hacia la izquierda */
+  top: 600px;         /* Ajusta la posición vertical */
+}
+
+/* Estilos para el nombre (h1) */
+.footer__bottom .nombre {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: bold;
+  position: relative;  /* Permite moverlo con top/left */
+  left: 0;             /* Ajusta horizontalmente */
+  top: 0;              /* Ajusta verticalmente */
+  cursor: default;
+}
+
+/* Contenedor de las redes sociales */
+.footer__bottom .imagenes_redes {
+  display: flex;
+  gap: 1.5rem;        /* Espacio entre iconos */
+  position: relative; /* Para moverlo sin afectar el flujo */
+  left: 200;            /* Ajusta horizontalmente */
+  top: 0;             /* Ajusta verticalmente */
+}
+
+/* Estilo base de los iconos */
+.footer__bottom .imagenes_redes img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.footer__bottom .imagenes_redes img:hover {
+  transform: scale(1.2); /* Animación al pasar el ratón */
+}
+
+
+img[alt="anillo"] {
+  position: relative;
+  left: -250px; /* Mueve la imagen hacia la derecha */
+  top: -350px;      /* Mueve la imagen hacia arriba */
+  width: 300px;    /* Ancho de la imagen (ajústalo) */
+  height: auto;    /* Mantiene la proporción */
+  padding: 20px;   /* Hace que la caja alrededor sea más grande */
+  display: inline-block; /* Para que el padding funcione como caja */
+}
+
+
 }
 
 
@@ -1136,4 +1559,4 @@ position: relative; /* Necesario para que funcione z-index */
 
 
 
-  }
+  
